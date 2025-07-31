@@ -8,7 +8,7 @@
 
 <body>	
 	<script>
-		function secondHighest(arr) {
+function secondHighest(arr) {
     let high = -Infinity;
     let secondHigh = -Infinity;
 
@@ -22,7 +22,8 @@
         }
     }
 
-    return secondHigh === -Infinity ? "No second highest" : secondHigh;
+    // Change this return value to -Infinity instead of "No second highest"
+    return secondHigh === -Infinity ? -Infinity : secondHigh;
 }
 
 function Main() {
@@ -35,6 +36,7 @@ function Main() {
 }
 
 Main();
+
 
 	</script>
 
