@@ -9,33 +9,33 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
-			let high = Number.MIN_VALUE;
-			let secondHigh = arr[0];
+    let high = -Infinity;
+    let secondHigh = -Infinity;
 
-			for(let i = 0; i < arr.length; i++){
-				if(arr[i] > high){
-					secondHigh = high;
-					high = arr[i];
-					
-				}
-				else if(arr[i] < high && arr[i] > secondHigh){
-					secondHigh = arr[i];
-				}
-			}
-		
-			return secondHigh;	
-		}
+    for (let i = 0; i < arr.length; i++) {
+        let num = Number(arr[i]);
+        if (num > high) {
+            secondHigh = high;
+            high = num;
+        } else if (num < high && num > secondHigh) {
+            secondHigh = num;
+        }
+    }
 
-		function Main() {
-			var n = prompt("Enter the number of elements");
-			var arr = [];
-			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
-			}
-			alert(secondHighest(arr));
-		}
-		Main();
+    return secondHigh === -Infinity ? "No second highest" : secondHigh;
+}
+
+function Main() {
+    let n = Number(prompt("Enter the number of elements"));
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = prompt("Enter element " + (i + 1));
+    }
+    alert(secondHighest(arr));
+}
+
+Main();
+
 	</script>
 
     <script type="text/javascript" src="./script.js">
